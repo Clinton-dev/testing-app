@@ -2,20 +2,13 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
+
+// describe("App component", () => {
+//   it("renders correct heading", () => {
+//     const { getByRole } = render(<App />)
+//     expect(getByRole("heading").textContent).toMatch(/our first test/i)
+//   })
 // });
-
-
-
-describe("App component", () => {
-  it("renders correct heading", () => {
-    const { getByRole } = render(<App />)
-    expect(getByRole("heading").textContent).toMatch(/our first test/i)
-  })
-});
 
 describe("App Component", () => {
   it("renders magnificent monkeys", () => {
@@ -25,7 +18,7 @@ describe("App Component", () => {
 
   it("renders radical rhinos after button click", () => {
     render(<App />);
-    const button = screen.getByRole("button", { name: "click Me" });
+    const button = screen.getByRole("button", { name: "Click Me" });
     userEvent.click(button);
 
     expect(screen.getByRole("heading").textContent).toMatch(/radical rhino/i)
